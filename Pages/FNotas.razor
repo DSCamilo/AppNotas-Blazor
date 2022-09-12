@@ -1,0 +1,41 @@
+﻿@page "/notas"
+
+<PageTitle>Nota Definitiva</PageTitle>
+<title>Calcular mi nota definitiva</title>
+
+<h1><b>Calcular mi nota definitiva</b></h1>
+<br>
+<h4>Nota 1</h4>
+<input type="number" placeholder="Escriba nota 1" @bind="nota1">
+<br>
+<h4>Nota 2</h4>
+<input type="number" placeholder="Escriba nota 2" @bind="nota2">
+<br>
+<h4>Nota 3</h4>
+<input type="number" placeholder="Escriba nota 3" @bind="nota3">
+<br>
+<h3>Resultado: </h3>
+<input type="number" placeholder="Resultado" @bind="notaD">
+<br>
+
+<p role="status">Nota definitiva: @notaD</p>
+
+
+<button class="btn btn-primary btn-lg" role="alert" @onclick="calcularDefinitiva">Calcular</button>
+
+
+@code {
+    private int currentCount = 0;
+    private float nota1;
+    private float nota2;
+    private float nota3;
+    private float notaD;
+
+    private void calcularDefinitiva()
+    {
+            notaD = (nota1+nota2+nota3)/3;
+    }
+
+   
+
+}
